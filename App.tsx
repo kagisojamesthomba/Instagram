@@ -8,7 +8,7 @@ const App = () => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text style={{color: colors.primary, fontSize: fonts.size.lg}}>
-        Instagram
+        Instagram clone
       </Text>
       <AntDesign name="stepforward" size={25} />
     </View>
