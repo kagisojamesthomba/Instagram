@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     color: colors.black,
     flex: 1,
     lineHeight: 18,
+    marginVertical: 3,
   },
   bold: {
     fontWeight: fonts.weight.bold,

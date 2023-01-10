@@ -13,7 +13,7 @@ const Comment = ({comment}: ICommentProps) => {
   return (
     <View style={styles.comment}>
       <Text style={styles.commentText}>
-        <Text style={styles.bold}>{comment.user.userName} </Text>
+        <Text style={styles.bold}>{comment.user.userName}</Text>
         {comment.comment}
       </Text>
       <AntDesign

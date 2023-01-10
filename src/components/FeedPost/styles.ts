@@ -39,6 +39,7 @@ export const styles = StyleSheet.create({
   text: {
     color: colors.black,
     lineHeight: 18,
+    marginVertical: 2,
   },
   bold: {
     fontWeight: fonts.weight.bold,
