@@ -1,6 +1,6 @@
 export interface IPost {
   id: string;
-  created: string;
+  createdAt: string;
   image?: string;
   images?: string[];
   video?: string;
