@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
   },
   commentText: {
     color: colors.black,
-    flex: 1,
     lineHeight: 18,
     marginVertical: 3,
   },
@@ -17,5 +16,22 @@ export const styles = StyleSheet.create({
   },
   icon: {
     marginHorizontal: 5,
+  },
+  avatar: {
+    width: 40,
+    aspectRatio: 1,
+    borderRadius: 25,
+    marginRight: 5,
+  },
+  footer: {
+    flexDirection: 'row',
+    marginBottom: 5,
+  },
+  footerText: {
+    color: colors.grey,
+    fontWeight: fonts.weight.thin,
+  },
+  middleColumn: {
+    flex: 1,
   },
 });
