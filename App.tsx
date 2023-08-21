@@ -1,21 +1,19 @@
-import {Text, View} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import colors from './src/theme/colors';
-import fonts from './src/theme/fonts';
+import {StyleSheet} from 'react-native';
+import FeedPost from './src/components/FeedPost';
+import {View} from 'react-native';
 
 function App() {
   return (
-    <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
-      <Text
-        style={{
-          color: colors.lightgrey,
-          fontSize: fonts.size.xl,
-        }}>
-        Hello Instagram.
-        <AntDesign name="stepforward" size={25} color={colors.primary} />
-      </Text>
+    <View style={styles.app}>
+      <FeedPost />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  app: {
+    flex: 1,
+  },
+});
 
 export default App;
