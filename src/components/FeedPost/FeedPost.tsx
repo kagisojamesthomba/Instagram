@@ -5,18 +5,24 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import colors from '../../theme/colors';
 import styles from './styles';
+import Comment from '../Comment';
+import {IPost} from '../../types/models';
 
-function FeedPost() {
+interface IFeedPost {
+  post: IPost;
+}
+
+function FeedPost({post}: IFeedPost) {
   return (
     <View style={styles.post}>
       <View style={styles.header}>
         <Image
           source={{
-            uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+            uri: post.user.image,
           }}
           style={styles.userAvatar}
         />
-        <Text style={styles.userName}>Kagiso</Text>
+        <Text style={styles.userName}>{post.user.username}</Text>
         <Entypo
           name="dots-three-horizontal"
           size={25}
@@ -25,7 +31,7 @@ function FeedPost() {
       </View>
       <Image
         source={{
-          uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
+          uri: post.image,
         }}
         style={styles.image}
       />
@@ -59,11 +65,11 @@ function FeedPost() {
         </View>
         <Text style={styles.text}>
           Liked by <Text style={styles.bold}>Tumo</Text> and{' '}
-          <Text style={styles.bold}>400</Text> others
+          <Text style={styles.bold}>{post.nofLikes}</Text> others
         </Text>
         {/* post desccription */}
         <Text style={styles.text}>
-          <Text style={styles.bold}>Kagiso </Text>
+          <Text style={styles.bold}>{post.user.username} </Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque itaque
           omnis dolorem corrupti at ea excepturi libero qui impedit voluptatum
           dolor, quas accusamus porro dicta non quidem, consectetur a illo
@@ -72,22 +78,12 @@ function FeedPost() {
           eos.
         </Text>
         {/* comments */}
-        <Text>View all 16 comment</Text>
-        <View style={styles.comment}>
-          <Text style={styles.commentText}>
-            <Text style={styles.bold}>Kagiso </Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            itaque
-          </Text>
-          <AntDesign
-            name="hearto"
-            size={16}
-            style={styles.icon}
-            color={colors.black}
-          />
-        </View>
+        <Text>View all {post.nofComments}comments</Text>
+        {post.comments.map(comment => (
+          <Comment key={comment.id} comment={comment} />
+        ))}
         {/* posted date */}
-        <Text>19 August 2023</Text>
+        <Text>{post.createdAt}</Text>
       </View>
     </View>
   );
